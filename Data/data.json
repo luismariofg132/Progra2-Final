@@ -1,0 +1,232 @@
+{
+    "Grupos": {
+        "Grupo A": [
+            {
+                "Equipo": "Nacional",
+                "uid": "1",
+                "Puntos": 0,
+                "Jugadores": [
+                    {
+                        "nombre": "Kevin Leonardo Mier",
+                        "uid": "1"
+                    },
+                    {
+                        "nombre": "Cristian Zapata",
+                        "uid": "2"
+                    },
+                    {
+                        "nombre": "Jarlan Barrera",
+                        "uid": "3"
+                    },
+                    {
+                        "nombre": "Jefferson Duque",
+                        "uid": "4"
+                    },
+                    {
+                        "nombre": "Dorlan Pabón",
+                        "uid": "5"
+                    }
+                ]
+            },
+            {
+                "Equipo": "Pereira",
+                "uid": "2",
+                "Puntos": 0,
+                "Jugadores": [
+                    {
+                        "nombre": "Aldair Quintana",
+                        "uid": "1"
+                    },
+                    {
+                        "nombre": "Carlos Ramirez",
+                        "uid": "2"
+                    },
+                    {
+                        "nombre": "Jhonny Vasquez",
+                        "uid": "3"
+                    },
+                    {
+                        "nombre": "Juan Pablo Zapata",
+                        "uid": "4"
+                    },
+                    {
+                        "nombre": "Angelo Rodriguez",
+                        "uid": "5"
+                    }
+                ]
+            },
+            {
+                "Equipo": "Huila",
+                "uid": "3",
+                "Puntos": 0,
+                "Jugadores": [
+                    {
+                        "nombre": "Jhon Figueroa",
+                        "uid": "1"
+                    },
+                    {
+                        "nombre": "Leonardo Escocia",
+                        "uid": "2"
+                    },
+                    {
+                        "nombre": "Blas Diaz",
+                        "uid": "3"
+                    },
+                    {
+                        "nombre": "Yosimarc Torres",
+                        "uid": "4"
+                    },
+                    {
+                        "nombre": "Faber Gil",
+                        "uid": "5"
+                    }
+                ]
+            },
+            {
+                "Equipo": "Once Caldas",
+                "uid": "4",
+                "Puntos": 0,
+                "Jugadores": [
+                    {
+                        "nombre": "Debinson Fernando Mateus",
+                        "uid": "1"
+                    },
+                    {
+                        "nombre": "Nahuel Gallardo",
+                        "uid": "2"
+                    },
+                    {
+                        "nombre": "Andres Felipe Correa",
+                        "uid": "3"
+                    },
+                    {
+                        "nombre": "Sherman Cardenas",
+                        "uid": "4"
+                    },
+                    {
+                        "nombre": "Dayro Moreno",
+                        "uid": "5"
+                    }
+                ]
+            },
+            {
+                "Equipo": "Millonarios",
+                "uid": "5",
+                "Puntos": 0,
+                "Jugadores": [
+                    {
+                        "nombre": "Alvaro Montero",
+                        "uid": "1"
+                    },
+                    {
+                        "nombre": "Andrés Llinás",
+                        "uid": "2"
+                    },
+                    {
+                        "nombre": "David Macalister Silva",
+                        "uid": "3"
+                    },
+                    {
+                        "nombre": "Daniel Castaño",
+                        "uid": "4"
+                    },
+                    {
+                        "nombre": "Leonardo Castro",
+                        "uid": "5"
+                    }
+                ]
+            },
+            {
+                "Equipo": "Pasto",
+                "uid": "6",
+                "Puntos": 0,
+                "Jugadores": [
+                    {
+                        "nombre": "Diego Martínez",
+                        "uid": "5"
+                    },
+                    {
+                        "nombre": "Christian Mafla",
+                        "uid": "6"
+                    },
+                    {
+                        "nombre": "Adrian Estacio",
+                        "uid": "7"
+                    },
+                    {
+                        "nombre": "Johan Caicedo",
+                        "uid": "8"
+                    },
+                    {
+                        "nombre": "Edwar López",
+                        "uid": "9"
+                    }
+                ]
+            },
+            {
+                "Equipo": "Unión Magdalena",
+                "uid": "7",
+                "Puntos": 0,
+                "Jugadores": [
+                    {
+                        "nombre": "Carlos Bejarano",
+                        "uid": "1"
+                    },
+                    {
+                        "nombre": "Juan Camilo Angulo",
+                        "uid": "2"
+                    },
+                    {
+                        "nombre": "Wilder Guisao",
+                        "uid": "3"
+                    },
+                    {
+                        "nombre": "Alexander Mejia",
+                        "uid": "4"
+                    },
+                    {
+                        "nombre": "Yamil Romero",
+                        "uid": "5"
+                    }
+                ]
+            },
+            {
+                "Equipo": "Cali",
+                "uid": "8",
+                "Puntos": 0,
+                "Jugadores": [
+                    {
+                        "nombre": "Kevin Dawson",
+                        "uid": "1"
+                    },
+                    {
+                        "nombre": "Aldair Gutiérrez",
+                        "uid": "2"
+                    },
+                    {
+                        "nombre": "German Mera",
+                        "uid": "3"
+                    },
+                    {
+                        "nombre": "Daniel Mantlla",
+                        "uid": "4"
+                    },
+                    {
+                        "nombre": "Kevin Velasco",
+                        "uid": "5"
+                    }
+                ]
+            },
+            "Nacional",
+            "Pereira",
+            "Huila",
+            "Once Caldas"
+        ],
+        "Grupo B": [
+            "Millonarios",
+            "Pasto",
+            "Unión Magdalena",
+            "Cali"
+        ]
+    }
+}
