@@ -1,0 +1,38 @@
+header {
+    background-color: #F21326;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: #fff;
+    font-size: 24px;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    padding: 20px;
+}
+
+.content__hijo {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+    background-color: #FFED8D;
+    border-radius: 10px;
+}
+
+.content__hijo button {
+    padding: 10px;
+    background-color: #F21326;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
