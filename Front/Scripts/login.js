@@ -1,17 +1,26 @@
-import Users from '../Data/usuarios.json' assert { type: "json" };
-
 const formLogin = document.getElementById('formLogin')
+const endpoint = "http://127.0.0.1:3000/api/users/"
 
-
-formLogin.addEventListener('submit', (e) => {
+formLogin.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const userName = document.getElementById('usuario').value;
     const password = document.getElementById('password').value;
 
-    const user = Users.usuario.find(user => user.username === userName && user.password === password);
+    const resp = await fetch(endpoint + 'userByUserNameAndPassword', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            username: userName,
+            password: password
+        })
+    })
 
-    console.log(password);
+    const user = await resp.json();
+
+    console.log(user);
 
     if (user) {
         localStorage.setItem('user', JSON.stringify(user.username));
