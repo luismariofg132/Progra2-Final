@@ -1,9 +1,7 @@
-{
-    "usuario": [
-        {
-            "uid": "1",
-            "username": "admin",
-            "password": "admin2"
-        }
-    ]
-}
+[
+    {
+        "uid": "1",
+        "username": "admin",
+        "password": "admin2"
+    }
+]
