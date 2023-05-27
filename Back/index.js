@@ -13,6 +13,8 @@ app.use(cors());
 
 // Routes
 app.use('/api/users', require('./routes/users'));
+app.use('/api/puntos', require('./routes/puntos'));
+app.use('/api/data', require('./routes/equipos'));
 
 
 // Monte de servidor
