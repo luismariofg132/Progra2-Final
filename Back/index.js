@@ -15,6 +15,8 @@ app.use(cors());
 app.use('/api/users', require('./routes/users'));
 app.use('/api/puntos', require('./routes/puntos'));
 app.use('/api/data', require('./routes/equipos'));
+app.use('/api/config', require('./routes/data'));
+app.use('/api/partidos', require('./routes/partidos'));
 
 
 // Monte de servidor
