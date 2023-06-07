@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const jugadores = equipo.Jugadores.map((jugador, index) => `${index + 1}) ${jugador.nombre}`).join('<br>');
         tableGA.innerHTML += `
         <tr>
-            <td>${equipo.Equipo}</td>
+            <td>${equipo.Equipo} (${equipo.uid})</td>
             <td>${jugadores}</td>
         </tr>
         `;
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const jugadores = equipo.Jugadores.map((jugador, index) => `${index + 1}) ${jugador.nombre}`).join('<br>');
         tableGB.innerHTML += `
         <tr>
-            <td>${equipo.Equipo}</td>
+            <td>${equipo.Equipo} (${equipo.uid})</td>
             <td>${jugadores}</td>
         </tr>
         `;
