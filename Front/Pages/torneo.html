@@ -20,18 +20,18 @@
             <div class="contenedor_hijo">
                 <div>
                     <h3>Fecha 1</h3>
-                    <p>Pereira vs Once Caldas</p>
-                    <p>Nacional vs Huila</p>
+                    <p>Partido 1: Pereira vs Once Caldas</p>
+                    <p>Partido 2: Nacional vs Huila</p>
                 </div>
                 <div>
                     <h3>Fecha 2</h3>
-                    <p>Pereira vs Nacional</p>
-                    <p>Once Caldas vs Huila</p>
+                    <p>Partido 3: Pereira vs Nacional</p>
+                    <p>Partido 4: Once Caldas vs Huila</p>
                 </div>
                 <div>
                     <h3>Fecha 3</h3>
-                    <p>Pereira vs Huila</p>
-                    <p>Nacional vs Once Caldas</p>
+                    <p>Partido 5: Pereira vs Huila</p>
+                    <p>Partido 6: Nacional vs Once Caldas</p>
                 </div>
             </div>
         </div>
@@ -40,22 +40,61 @@
             <div class="contenedor_hijo">
                 <div>
                     <h3>Fecha 1</h3>
-                    <p>Millonarios vs Pasto</p>
-                    <p>Unión Magdalena vs Cali</p>
+                    <p>Partido 7: Millonarios vs Pasto</p>
+                    <p>Partido 8: Unión Magdalena vs Cali</p>
                 </div>
                 <div>
                     <h3>Fecha 2</h3>
-                    <p>Cali vs Millonarios</p>
-                    <p>Pasto vs Unión Magdalena</p>
+                    <p>Partido 9: Cali vs Millonarios</p>
+                    <p>Partido 10: Pasto vs Unión Magdalena</p>
                 </div>
                 <div>
                     <h3>Fecha 3</h3>
-                    <p>Cali contra Pasto</p>
-                    <p>Unión Magdalena vs Millonarios</p>
+                    <p>Partido 11: Cali contra Pasto</p>
+                    <p>Partido 12: Unión Magdalena vs Millonarios</p>
                 </div>
             </div>
         </div>
     </div>
+    <div class="contenedor">
+        <div class="contenedor_hijo">
+            <label for="partidoSelect">Partido </label>
+            <input type="number" id="partidoSelect">
+            <button id="btnRegistrarPartido" onclick="openModal()">Registrar Partido</button>
+        </div>
+        <div class="contenedor_hijo">
+            <button id="btnContinuar">Continuar Finales</button>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+
+        <!-- Contenido del modal -->
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>Editar partido <span id="partidoRegistrar"></span></p>
+            <form id="procesarDatos">
+                <div>
+                    <label for="equipo1" id="lblEquipo1"></label>
+                    <input type="number" id="equipo1">
+                    <input type="text" id="equipo1Goles" placeholder="Goles y cantidad">
+                </div>
+                <div>
+                    <label for="equipo2" id="lblEquipo2"></label>
+                    <input type="number" id="equipo2">
+                    <input type="text" id="equipo2Goles" placeholder="Goles y cantidad">
+                </div>
+                <div>
+                    <button type="submit">Procesar Datos</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../Scripts/torneo.js"></script>
 </body>
 
 </html>
