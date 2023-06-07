@@ -1,4 +1,4 @@
-const url = "http://127.0.0.1:3000/api/partidos";
+const url = "https://api-progra-final.onrender.com/api/partidos";
 
 const modal = document.getElementById("myModal");
 // Obtener el botón que abre el modal

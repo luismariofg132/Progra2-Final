@@ -2,7 +2,7 @@ const tableGA = document.getElementById('tableGA');
 const tableGB = document.getElementById('tableGB');
 const btnQuitarJugador = document.getElementById('btnQuitarJugador');
 const btnAgregarJugador = document.getElementById('btnAgregarJugador');
-const url = 'http://127.0.0.1:3000/api/data/';
+const url = 'https://api-progra-final.onrender.com/api/data/';
 
 var modal = document.getElementById("myModal");
 
