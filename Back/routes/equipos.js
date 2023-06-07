@@ -48,5 +48,20 @@ router.post('/editJugador', (req, res) => {
     }
 })
 
+router.delete('/deleteJugador', (req, res) => {
+    const { idEquipo, nombreJugador } = req.body
+    if (idEquipo && nombreJugador) {
+        data.forEach(equipo => {
+            if (equipo.uid === idEquipo) {
+                equipo.Jugadores = equipo.Jugadores.filter(jugador => jugador.nombre !== nombreJugador)
+            }
+        })
+        fs.writeFileSync('../Data/data.json', JSON.stringify(data))
+        res.json(data)
+    } else {
+        res.status(500).json({ error: 'There was an error.' })
+    }
+})
+
 
 module.exports = router

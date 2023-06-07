@@ -1,5 +1,7 @@
 const tableGA = document.getElementById('tableGA');
 const tableGB = document.getElementById('tableGB');
+const btnQuitarJugador = document.getElementById('btnQuitarJugador');
+const btnAgregarJugador = document.getElementById('btnAgregarJugador');
 const url = 'http://127.0.0.1:3000/api/data/';
 
 var modal = document.getElementById("myModal");
@@ -54,5 +56,64 @@ document.addEventListener('DOMContentLoaded', async () => {
         </tr>
         `;
     });
+
+});
+
+btnAgregarJugador.addEventListener('click', async () => {
+    const uidEquipo = document.getElementById('uidEquipo').value;
+    const nombreJugador = document.getElementById('nombreJugador').value;
+
+    if (uidEquipo === '' || nombreJugador === '') {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Debes ingresar el uid del equipo y el nombre del jugador',
+        });
+        return;
+    }
+
+    const res = await fetch(url + 'addJugador', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            idEquipo: uidEquipo,
+            nombre: nombreJugador
+        })
+    });
+
+    const data = await res.json();
+
+    window.location.reload();
+});
+
+btnQuitarJugador.addEventListener('click', async () => {
+    const uidEquipo = document.getElementById('uidEquipo').value;
+    const nombreJugador = document.getElementById('nombreJugador').value;
+
+    if (uidEquipo === '' || nombreJugador === '') {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Debes ingresar el uid del equipo y el nombre del jugador',
+        });
+        return;
+    }
+
+    const res = await fetch(url + 'deleteJugador', {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            idEquipo: uidEquipo,
+            nombreJugador: nombreJugador
+        })
+    });
+
+    const data = await res.json();
+
+    window.location.reload();
 
 });
