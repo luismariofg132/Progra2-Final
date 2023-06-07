@@ -99,6 +99,22 @@ const procesarPartido = async () => {
     const golesEquipo1Array = extraerGoles(golesEquipo1);
     const golesEquipo2Array = extraerGoles(golesEquipo2);
 
+    if (partidoDatos.fase == "final") {
+        if (cantidadGolesEquipo1 > cantidadGolesEquipo2) {
+            Swal.fire({
+                icon: 'success',
+                title: '¡Ganador!',
+                text: partidoDatos.equipo1,
+            });
+        } else {
+            Swal.fire({
+                icon: 'success',
+                title: '¡Ganador!',
+                text: partidoDatos.equipo2,
+            });
+        }
+    }
+
     // Peticion HTTP Registrar Partido
     const resp = await fetch(url + "/editPartidoFGrupos", {
         method: 'PUT',
@@ -119,7 +135,7 @@ const procesarPartido = async () => {
 
     const data = await resp.json();
 
-    console.log(data);
+
 }
 
 formProcesarDatos.addEventListener("submit", async (e) => {
@@ -174,8 +190,72 @@ btnProcesarSemifinales.addEventListener("click", async (e) => {
     const equiposMasGoles1a6 = obtenerEquiposMasGoles(partidos.slice(0, 6));
     const equiposMasGoles7a12 = obtenerEquiposMasGoles(partidos.slice(6, 12));
 
-    console.log(equiposMasGoles1a6);
-    console.log(equiposMasGoles7a12);
+    const resp2 = await fetch(url + "/editPartidoFGrupos", {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            uipartido: "13",
+            fase: "Semifinal",
+            equipo1: equiposMasGoles1a6[0],
+            equipo2: equiposMasGoles1a6[1],
+            goles1: 0,
+            goles2: 0,
+            jugadorGoles1: [],
+            jugadorGoles2: []
+        })
+    })
 
+    const resp3 = await fetch(url + "/editPartidoFGrupos", {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            uipartido: "14",
+            fase: "Semifinal",
+            equipo1: equiposMasGoles7a12[0],
+            equipo2: equiposMasGoles7a12[1],
+            goles1: 0,
+            goles2: 0,
+            jugadorGoles1: [],
+            jugadorGoles2: []
+        })
+    })
 
+    const data = await resp2.json();
+    const data2 = await resp3.json();
+
+    window.location.reload();
+});
+
+btnProcesarFinal.addEventListener("click", async (e) => {
+    e.preventDefault();
+
+    const resp = await fetch(url);
+    const partidos = await resp.json();
+
+    const equiposMasGoles13a14 = obtenerEquiposMasGoles(partidos.slice(12, 14));
+
+    const resp2 = await fetch(url + "/editPartidoFGrupos", {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            uipartido: "15",
+            fase: "Final",
+            equipo1: equiposMasGoles13a14[0],
+            equipo2: equiposMasGoles13a14[1],
+            goles1: 0,
+            goles2: 0,
+            jugadorGoles1: [],
+            jugadorGoles2: []
+        })
+    })
+
+    const data = await resp2.json();
+
+    window.location.reload();
 });

@@ -10,13 +10,15 @@ router.get('/', (req, res) => {
 })
 
 router.put('/editPartidoFGrupos', (req, res) => {
-    const { uipartido, goles1, goles2, jugadorGoles1, jugadorGoles2 } = req.body
+    const { uipartido, goles1, goles2, jugadorGoles1, jugadorGoles2, equipo1, equipo2 } = req.body
     partidos.forEach(partido => {
         if (partido.partido === uipartido) {
             partido.goles1 = goles1
             partido.goles2 = goles2
             partido.jugadorGoles1 = jugadorGoles1
             partido.jugadorGoles2 = jugadorGoles2
+            partido.equipo1 = equipo1
+            partido.equipo2 = equipo2
         }
     })
     fs.writeFileSync('../Data/partidos.json', JSON.stringify(partidos))
