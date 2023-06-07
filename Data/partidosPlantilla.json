@@ -130,5 +130,38 @@
         "goles2": 0,
         "jugadorGoles1": [],
         "jugadorGoles2": []
+    },
+    {
+        "partido": "13",
+        "fase": "semifinal",
+        "equipo1": "",
+        "equipo2": "",
+        "status": "pendiente",
+        "goles1": 0,
+        "goles2": 0,
+        "jugadorGoles1": [],
+        "jugadorGoles2": []
+    },
+    {
+        "partido": "14",
+        "fase": "semifinal",
+        "equipo1": "",
+        "equipo2": "",
+        "status": "pendiente",
+        "goles1": 0,
+        "goles2": 0,
+        "jugadorGoles1": [],
+        "jugadorGoles2": []
+    },
+    {
+        "partido": "15",
+        "fase": "final",
+        "equipo1": "",
+        "equipo2": "",
+        "status": "pendiente",
+        "goles1": 0,
+        "goles2": 0,
+        "jugadorGoles1": [],
+        "jugadorGoles2": []
     }
 ]

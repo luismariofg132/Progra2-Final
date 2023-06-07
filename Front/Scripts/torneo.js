@@ -14,6 +14,9 @@ const lblEquipo1 = document.getElementById("lblEquipo1");
 const lblEquipo2 = document.getElementById("lblEquipo2");
 const partidoRegistrar = document.getElementById("partidoRegistrar");
 
+const btnProcesarSemifinales = document.getElementById("btnProcesarSemifinales");
+const btnProcesarFinal = document.getElementById("btnProcesarFinal");
+
 const obtenerPartidos = async (partidoBuscar) => {
     const resp = await fetch(url);
     const partidos = await resp.json();
@@ -122,4 +125,57 @@ const procesarPartido = async () => {
 formProcesarDatos.addEventListener("submit", async (e) => {
     e.preventDefault();
     await procesarPartido();
+});
+
+function obtenerEquiposMasGoles(partidos) {
+    const equipos = {}; // Objeto para almacenar los goles por equipo
+
+    // Recorrer los partidos y contar los goles por equipo
+    for (let i = 0; i < partidos.length; i++) {
+        const partido = partidos[i];
+        const equipoLocal = partido.equipo1;
+        const equipoVisitante = partido.equipo2;
+        const golesLocal = partido.goles1;
+        const golesVisitante = partido.goles2;
+
+        // Contar los goles del equipo local
+        if (equipos[equipoLocal]) {
+            equipos[equipoLocal] += golesLocal;
+        } else {
+            equipos[equipoLocal] = golesLocal;
+        }
+
+        // Contar los goles del equipo visitante
+        if (equipos[equipoVisitante]) {
+            equipos[equipoVisitante] += golesVisitante;
+        } else {
+            equipos[equipoVisitante] = golesVisitante;
+        }
+    }
+
+    // Ordenar los equipos por la cantidad de goles (de mayor a menor)
+    const equiposOrdenados = Object.keys(equipos).sort(
+        (equipoA, equipoB) => equipos[equipoB] - equipos[equipoA]
+    );
+
+    // Obtener los dos equipos con más goles
+    const equipo1 = equiposOrdenados[0];
+    const equipo2 = equiposOrdenados[1];
+
+    return [equipo1, equipo2];
+}
+
+btnProcesarSemifinales.addEventListener("click", async (e) => {
+    e.preventDefault();
+
+    const resp = await fetch(url);
+    const partidos = await resp.json();
+
+    const equiposMasGoles1a6 = obtenerEquiposMasGoles(partidos.slice(0, 6));
+    const equiposMasGoles7a12 = obtenerEquiposMasGoles(partidos.slice(6, 12));
+
+    console.log(equiposMasGoles1a6);
+    console.log(equiposMasGoles7a12);
+
+
 });
